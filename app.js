@@ -5,25 +5,37 @@ function exibirTexto( tag, texto){
     campo.innerHTML = texto;
 }
 
-function adicionarAmigo(){
+function adicionarAmigo() {
     let nome = document.querySelector('input').value;
-    //valida a entrada do nome
-    if(nome == ""){
+
+    if (nome === "") {
         Swal.fire({
             icon: "warning",
             title: "Atenção!",
             text: "Por favor, digite um nome.",
             confirmButtonColor: "#007bff"
         });
-        ;
-    }else{
-        listaNomes.push(nome);   
+    } else {
+        listaNomes.push(nome);
+        exibirListaAmigos(); 
     }
-    //exibe os nomes em formato de lista
-    exibirTexto("listaAmigos", listaNomes.join("<li></li>"));
-    //limpa o campo
+
+    // Limpa o campo de entrada
     document.querySelector('input').value = "";
 }
+
+
+function exibirListaAmigos() {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = ""; 
+
+    for (let i = 0; i < listaNomes.length; i++) {
+        let li = document.createElement("li"); 
+        li.textContent = listaNomes[i]; 
+        lista.appendChild(li); 
+    }
+}
+
 
 
 function sortearAmigo(){
