@@ -9,7 +9,13 @@ function adicionarAmigo(){
     let nome = document.querySelector('input').value;
     //valida a entrada do nome
     if(nome == ""){
-        alert("Por favor, digite um nome.");
+        Swal.fire({
+            icon: "warning",
+            title: "Atenção!",
+            text: "Por favor, digite um nome.",
+            confirmButtonColor: "#007bff"
+        });
+        ;
     }else{
         listaNomes.push(nome);   
     }
