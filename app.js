@@ -1,5 +1,4 @@
 let listaNomes = [];
-let listaIndices = []
 
 function exibirTexto( tag, texto){
     let campo = document.getElementById(tag);
