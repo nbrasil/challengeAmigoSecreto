@@ -1,4 +1,5 @@
 let listaNomes = [];
+let listaIndices = []
 
 function exibirTexto( tag, texto){
     let campo = document.getElementById(tag);
@@ -28,7 +29,5 @@ function adicionarAmigo(){
 
 function sortearAmigo(){
     let indice = parseInt(Math.random() * listaNomes.length);
-    console.log(indice)
     exibirTexto("resultado", listaNomes[indice])
-
 }
